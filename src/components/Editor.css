@@ -1,0 +1,131 @@
+.editor-wrap {
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #0a0908;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px;
+  padding: 8px 10px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+
+.tb-btn {
+  width: 30px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; border-radius: 3px;
+  color: var(--muted); cursor: pointer;
+  transition: all .14s;
+}
+.tb-btn:hover:not(:disabled) { background: rgba(212,168,67,.1); color: var(--cream); }
+.tb-btn.active { background: rgba(212,168,67,.15); color: var(--amber-light); }
+.tb-btn:disabled { opacity: .25; cursor: default; }
+
+.tb-divider {
+  width: 1px; height: 18px;
+  background: var(--border2); margin: 0 4px;
+}
+
+/* ── Editor content ── */
+.editor-content {
+  padding: 20px 24px;
+  min-height: 260px;
+  font-family: var(--font-body);
+  font-size: .93rem;
+  line-height: 1.78;
+  color: #d8cfc0;
+  outline: none;
+}
+
+.editor-content .tiptap { outline: none; }
+
+/* Placeholder */
+.editor-content .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left; color: var(--muted2); pointer-events: none; height: 0;
+}
+
+/* Prose inside editor */
+.editor-content h1 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--cream); margin: 20px 0 10px; }
+.editor-content h2 { font-family: var(--font-display); font-size: 1.2rem;  font-weight: 700; color: var(--amber-light); margin: 18px 0 8px; }
+.editor-content h3 { font-family: var(--font-display); font-size: 1rem;    font-weight: 700; color: var(--amber); margin: 14px 0 6px; }
+
+.editor-content p  { margin-bottom: 10px; }
+
+.editor-content strong { color: var(--cream); font-weight: 600; }
+.editor-content em     { font-style: italic; color: #c8bfa8; }
+.editor-content s      { opacity: .5; }
+.editor-content mark   { background: rgba(212,168,67,.22); color: var(--cream); border-radius: 2px; padding: 0 2px; }
+
+.editor-content ul, .editor-content ol {
+  padding-left: 20px; margin-bottom: 10px;
+}
+.editor-content li { margin-bottom: 3px; }
+
+.editor-content blockquote {
+  border-left: 3px solid var(--amber);
+  background: rgba(212,168,67,.05);
+  padding: 10px 16px;
+  border-radius: 0 3px 3px 0;
+  margin: 12px 0;
+  font-style: italic; color: #c8bfa8;
+}
+
+.editor-content hr {
+  border: none; border-top: 1px solid var(--border2);
+  margin: 18px 0;
+}
+
+.editor-content code {
+  font-family: 'Courier New', monospace; font-size: .85em;
+  color: var(--amber-light); background: rgba(212,168,67,.07);
+  padding: 1px 5px; border-radius: 3px;
+}
+
+.editor-content pre {
+  background: #060504;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: .84rem; color: var(--amber-light);
+  overflow-x: auto; margin: 12px 0;
+}
+
+/* ── Image styles in editor ── */
+.editor-content img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.editor-content img.ProseMirror-selectednode {
+  border-color: var(--amber);
+  outline: 2px solid rgba(212,168,67,.3);
+}
+
+/* ── Image styles in post body (prose) ── */
+.prose img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  margin: 14px 0;
+  background: #0a0908;
+}
+
+/* ── Editor hint bar ── */
+.editor-hint {
+  padding: 7px 14px;
+  font-size: .72rem;
+  color: var(--muted2);
+  background: var(--surface2);
+  border-top: 1px solid var(--border);
+}
+.editor-hint strong { color: var(--muted); }

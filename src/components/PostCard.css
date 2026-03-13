@@ -1,0 +1,46 @@
+.post-card {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 9px;
+  transition: border-color .18s, transform .14s;
+  cursor: pointer;
+}
+.post-card:hover {
+  border-color: rgba(212,168,67,.3);
+  transform: translateX(3px);
+}
+
+.pc-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 900;
+  color: var(--amber); opacity: .3;
+  line-height: 1; flex-shrink: 0; min-width: 30px;
+  padding-top: 2px;
+}
+
+.pc-body { flex: 1; min-width: 0; }
+
+.pc-title {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 700; color: var(--cream);
+  margin-bottom: 3px;
+}
+
+.pc-desc { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+.pc-meta {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 7px;
+  margin-top: 8px;
+}
+
+.pc-date { font-size: .72rem; color: var(--muted2); }
+
+.pc-arrow {
+  font-size: 1rem; color: var(--muted); opacity: .35;
+  align-self: center; flex-shrink: 0;
+  transition: opacity .18s, transform .18s;
+}
+.post-card:hover .pc-arrow { opacity: 1; transform: translateX(4px); }
